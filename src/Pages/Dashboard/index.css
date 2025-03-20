@@ -1,0 +1,41 @@
+.profile-grid {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  min-height: 100vh;
+  background-color: #f9fafb;
+}
+
+.main-content-Profile {
+  padding: 2rem;
+}
+
+.grid-container {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  width: '100%';
+}
+
+.add-button {
+  background-color: #3b82f6;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-width: 0px;
+}
+
+.button-text {
+  white-space: nowrap;
+}
+
+@media (max-width: 458px) {
+
+  .profile-grid {
+  display: flex;
+  flex-direction: column;
+}
+
+}

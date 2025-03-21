@@ -8,15 +8,10 @@ const Header = ({ toggleDropdown, showDropdown }) => {
 
     return (
       <header className="header">
-        {loading ? (
-          <div>Loading...</div>
-        ) : (
+
           <div>
-            <h1>Welcome back,</h1>
-             {/* {Profile?.username}</h1> */}
-            <p>Friday, February 21, 2025</p>
+            <h1>Welcome back, Admin</h1>
           </div>
-        )}
         {/* <div className="header-actions">
             <button className="notification-button">
                 <i className="ri-notification-line"></i>

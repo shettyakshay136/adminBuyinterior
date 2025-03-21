@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState , useContext } from "react";
 import "./index.css";
 import axios from "axios";
+import { AuthContext } from "../../AuthContext";
 
 import { Link, useNavigate, useLocation } from "react-router-dom";
 
@@ -9,8 +10,7 @@ const Login = () => {
   const location = useLocation();
 
 
-
-
+  const { setIsAuthenticated } = useContext(AuthContext);
 
   const [credentials, setCredentials] = useState({
     username: "",
@@ -40,9 +40,8 @@ const Login = () => {
       if (response.status === 200) {
         console.log("Response:", response.data);
         console.log("Login success");
-
-        // Save token (modify based on API response)
         localStorage.setItem("token", response.data.access);
+        setIsAuthenticated(true);
 
         navigate("/dashboard");
       }
@@ -53,9 +52,6 @@ const Login = () => {
       );
     }
   };
-
-
-
 
   return (
     <div className="container">

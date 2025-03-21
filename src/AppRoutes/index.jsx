@@ -1,4 +1,4 @@
-import React , {useState, useEffect} from 'react';
+import React , {useState, useEffect , useContext} from 'react';
 import {
   BrowserRouter as Router,
   Routes,
@@ -7,14 +7,10 @@ import {
 } from "react-router-dom";
 import SignIn from "../Pages/Sigin";
 import DashBoard from "../Pages/Dashboard";
+import { AuthContext } from "../AuthContext";
 
 const AppRoutes = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    setIsAuthenticated(!!token);
-  }, []);
+  const { isAuthenticated } = useContext(AuthContext);
 
   return (
     <Routes>

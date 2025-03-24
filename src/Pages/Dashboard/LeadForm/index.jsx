@@ -1,8 +1,14 @@
-import React, { useState } from "react";
+import React, { useState , useContext } from "react";
 import { RiCloseLine } from "react-icons/ri";
 import "./index.css";
+import { AuthContext } from "../../../AuthContext";
+
+import { DataContext } from "../ContextApi";
 
 const AddressForm = ({ onClose }) => {
+
+
+  const { fetchData } = useContext(DataContext);
 
 
 
@@ -70,14 +76,15 @@ const AddressForm = ({ onClose }) => {
        {
          method: "POST",
          headers: {
-           Authorization: `Bearer ${accessToken}`, // DO NOT set "Content-Type" manually
+           Authorization: `Bearer ${accessToken}`,
          },
          body: formDataToSend,
        }
      );
 
      if (response.ok) {
-       alert("Address created successfully!");
+       alert("lead created successfully!");
+       fetchData();
        onClose();
      } else {
        const errorData = await response.json();

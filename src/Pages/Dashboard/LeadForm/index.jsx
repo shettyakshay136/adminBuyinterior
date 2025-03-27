@@ -53,7 +53,7 @@ const AddressForm = ({ onClose }) => {
  const handleSubmit = async (e) => {
    e.preventDefault();
 
-   if (!userId ||!accessToken) {
+   if (!accessToken) {
      alert("User is not authenticated. Please log in.");
      return;
    }

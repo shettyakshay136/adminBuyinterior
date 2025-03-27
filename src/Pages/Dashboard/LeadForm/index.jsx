@@ -36,10 +36,10 @@ const AddressForm = ({ onClose }) => {
   });
 
   const userId = localStorage.getItem("User_id");
-  const accessToken = localStorage.getItem("accessToken");
+  const accessToken = localStorage.getItem("token");
 
 
-  console.log('check data' , userId , accessToken)
+  console.log('check data in lead ofrm' , userId , accessToken)
 
   // Handle input change
   const handleChange = (e) => {

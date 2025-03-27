@@ -40,18 +40,21 @@ const AddressForm = ({ lead, onClose, onUpdate }) => {
         `https://buyinteriorapp-ed1e9e8d81f4.herokuapp.com/api/leads/${formData.id}/`,
         {
           method: "PUT",
-          headers: { "Content-Type": "application/json" },
+          headers: { 
+           "Content-Type": "application/json",
+           Authorization: `Bearer ${accessToken}`,
+           },
           body: JSON.stringify(formData),
         }
       );
 
-      if (response === 200) {
+      if (response.ok) {
         alert("Lead updated successfully!");
         onUpdate(formData); 
-        // setTimeout(() => {
-        //     fetchData(); 
-        // }, 100);
-        // onClose();
+        setTimeout(() => {
+            fetchData(); 
+        }, 1000);
+        onClose();
       } else {
         alert("Failed to update lead");
       }
@@ -70,7 +73,7 @@ const AddressForm = ({ lead, onClose, onUpdate }) => {
           </button>
         </div>
 
-        <form onSubmit={handleUpdate}>
+        <form>
           <div className="form-grid">
             <div className="form-group">
               <label className="form-label">Enter Name</label>
@@ -227,7 +230,11 @@ const AddressForm = ({ lead, onClose, onUpdate }) => {
             >
               Cancel
             </button>
-            <button type="submit" className="button button-primary">
+            <button
+              onClick={handleUpdate}
+              type="button"
+              className="button button-primary"
+            >
               Update Lead
             </button>
           </div>

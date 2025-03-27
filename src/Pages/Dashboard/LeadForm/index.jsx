@@ -35,7 +35,7 @@ const AddressForm = ({ onClose }) => {
     discount_price: "",
   });
 
-  const userId = localStorage.getItem("userId");
+  const userId = localStorage.getItem("User_id");
   const accessToken = localStorage.getItem("accessToken");
 
 
@@ -53,7 +53,7 @@ const AddressForm = ({ onClose }) => {
  const handleSubmit = async (e) => {
    e.preventDefault();
 
-   if (!userId || !accessToken) {
+   if (!userId ||!accessToken) {
      alert("User is not authenticated. Please log in.");
      return;
    }
@@ -68,7 +68,7 @@ const AddressForm = ({ onClose }) => {
      }
    });
 
-   console.log([...formDataToSend.entries()]); // Debugging log
+   console.log([...formDataToSend.entries()]); 
 
    try {
      const response = await fetch(

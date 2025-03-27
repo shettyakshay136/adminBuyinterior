@@ -41,8 +41,8 @@ const Login = () => {
         console.log("Response:", response.data);
         console.log("Login success");
         localStorage.setItem("token", response.data.access);
+        localStorage.setItem("User_id", response.data.user_id);
         setIsAuthenticated(true);
-
         navigate("/dashboard");
       }
     } catch (error) {

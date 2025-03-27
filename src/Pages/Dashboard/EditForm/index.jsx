@@ -45,13 +45,13 @@ const AddressForm = ({ lead, onClose, onUpdate }) => {
         }
       );
 
-      if (response.ok) {
+      if (response === 200) {
         alert("Lead updated successfully!");
         onUpdate(formData); 
-        setTimeout(() => {
-            fetchData(); 
-        }, 100);
-        onClose();
+        // setTimeout(() => {
+        //     fetchData(); 
+        // }, 100);
+        // onClose();
       } else {
         alert("Failed to update lead");
       }

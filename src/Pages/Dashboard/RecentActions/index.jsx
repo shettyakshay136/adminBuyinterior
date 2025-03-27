@@ -20,7 +20,7 @@ const RecentLeads = () => {
         console.log("Updated Leads:", updatedLeads); 
       };
 
-      const accessToken = localStorage.getItem("accessToken");
+      const accessToken = localStorage.getItem("token");
 
       const handleDelete = async (leadId) => {
         try {

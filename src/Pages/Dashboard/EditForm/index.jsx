@@ -186,6 +186,17 @@ const AddressForm = ({ lead, onClose, onUpdate }) => {
               />
             </div>
             <div className="form-group">
+              <label className="form-label">Enter Mobile Number</label>
+              <input
+                type="tel"
+                name="mobile_number"
+                value={formData.mobile_number}
+                onChange={handleChange}
+                required
+                className="form-input"
+              />
+            </div>
+            <div className="form-group">
               <label className="form-label">Enter Price</label>
               <input
                 type="number"

@@ -33,6 +33,7 @@ const AddressForm = ({ onClose }) => {
     tags: "",
     price: "",
     discount_price: "",
+    mobile_number:"",
   });
 
   const userId = localStorage.getItem("User_id");
@@ -42,13 +43,16 @@ const AddressForm = ({ onClose }) => {
   console.log('check data in lead ofrm' , userId , accessToken)
 
   // Handle input change
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
+const handleChange = (e) => {
+  const { name, value } = e.target;
+
+  setFormData((prevData) => ({
+    ...prevData,
+    [name]:
+      name === "mobile_number" ? value.replace(/\D/g, "").slice(0, 10) : value,
+  }));
+};
+
 
  const handleSubmit = async (e) => {
    e.preventDefault();
@@ -217,6 +221,17 @@ const AddressForm = ({ onClose }) => {
                 type="text"
                 name="tags"
                 value={formData.tags}
+                onChange={handleChange}
+                required
+                className="form-input"
+              />
+            </div>
+            <div className="form-group">
+              <label className="form-label">Enter Mobile Number</label>
+              <input
+                type="tel"
+                name="mobile_number"
+                value={formData.mobile_number}
                 onChange={handleChange}
                 required
                 className="form-input"

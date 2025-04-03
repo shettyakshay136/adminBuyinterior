@@ -76,7 +76,7 @@ const App = () => {
       <DataProvider>
         <div className="profile-grid">
             <Sidebar setActivePage={setActivePage} activePage={activePage} />
-            <main className="main-content-Profile ">
+            <main className="main-content-Profile">
                 <Header toggleDropdown={toggleDropdown} showDropdown={showDropdown} />
                 {renderContent()}
             </main>

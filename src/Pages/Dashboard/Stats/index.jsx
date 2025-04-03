@@ -15,6 +15,7 @@ const Stats = () => {
     const { leads, leadStats } = useContext(DataContext);
 
 
+
     return (
       <div className="stats-grid">
         <div className="stat-card">
@@ -29,7 +30,7 @@ const Stats = () => {
             <AiOutlineDownload size={22} />
           </div>
           <h3>{leadStats.total_leads_ordered}</h3>
-          <p>Total Downloads</p>
+          <p>Total Orders</p>
         </div>
         <div className="stat-card">
           <div className="stat-icon">

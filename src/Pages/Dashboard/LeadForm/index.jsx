@@ -34,6 +34,7 @@ const AddressForm = ({ onClose }) => {
     price: "",
     discount_price: "",
     mobile_number:"",
+    status:"",
   });
 
   const userId = localStorage.getItem("User_id");
@@ -271,6 +272,19 @@ const handleChange = (e) => {
                 <option value="Home">Home</option>
                 <option value="Work">Work</option>
                 <option value="Other">Other</option>
+              </select>
+            </div>
+            <div className="form-group">
+              <label className="form-label">Enter Status</label>
+              <select
+                name="status"
+                value={formData.status}
+                onChange={handleChange}
+                required
+                className="form-select"
+              >
+                <option value="available">Available</option>
+                <option value="sold_out">SoldOut</option>
               </select>
             </div>
           </div>
